@@ -16,7 +16,7 @@
         <EditText
             android:id="@+id/txtSearch"
             android:layout_width="0dp"
-            android:layout_weight="0.7"
+            android:layout_weight="0.85"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:singleLine="true"
@@ -25,9 +25,11 @@
         <Button
             android:id="@+id/clear_search"
             android:layout_width="0dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.15"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
+            android:background="#d32f2f"
+            android:textSize="12sp"
             android:text="@string/clear_search" />
 
     </LinearLayout>
@@ -36,7 +38,8 @@
     <ListView
         android:id="@+id/lw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"></ListView>
 
 
 </LinearLayout>

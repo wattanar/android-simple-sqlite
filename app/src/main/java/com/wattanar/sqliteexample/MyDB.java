@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.graphics.Color;
+import android.text.Html;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -32,7 +34,7 @@ public class MyDB  extends SQLiteAssetHelper {
 
         try {
             while (c.moveToNext()) {
-                myArrList.add(c.getString(c.getColumnIndex("tentry")) + " (" + c.getString(c.getColumnIndex("ecat")) + ")");
+                myArrList.add(c.getString(c.getColumnIndex("esearch")) + " - " + c.getString(c.getColumnIndex("tentry")) + " (" + c.getString(c.getColumnIndex("ecat")) + ")");
             }
         } finally {
             c.close();
