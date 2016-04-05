@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         db.getReadableDatabase();
         employees = db.getEmployees(s);
 
-        Adapter adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1, employees);
+        Adapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.textview2, employees);
         lView.setAdapter((ListAdapter) adapter);
     }
 

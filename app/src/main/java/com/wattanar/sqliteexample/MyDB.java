@@ -25,7 +25,7 @@ public class MyDB  extends SQLiteAssetHelper {
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<String> myArrList = new ArrayList<String>();
 
-        Cursor c = db.rawQuery("SELECT * FROM eng2thai E WHERE E.esearch LIKE '"+s+"%' LIMIT 500 ", null);
+        Cursor c = db.rawQuery("SELECT * FROM eng2thai E WHERE E.esearch LIKE '"+s+"%' AND E.ecat NOT IN ('IDM','PHRV') LIMIT 500 ", null);
 
         c.moveToFirst();
 
