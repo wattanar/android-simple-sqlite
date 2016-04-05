@@ -39,6 +39,7 @@ public class MyDB  extends SQLiteAssetHelper {
         } finally {
             c.close();
         }
+        db.close();
 
         return myArrList;
 
