@@ -20,19 +20,19 @@ public class MyDB  extends SQLiteAssetHelper {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-    public ArrayList getEmployees() {
+    public ArrayList getEmployees(String s) {
 
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<String> myArrList = new ArrayList<String>();
 
-        Cursor c = db.rawQuery("SELECT * FROM eng2thai", null);
+        Cursor c = db.rawQuery("SELECT * FROM eng2thai WHERE esearch LIKE '"+s+"%' LIMIT 1000", null);
 
         c.moveToFirst();
 
 
         try {
             while (c.moveToNext()) {
-                myArrList.add(c.getString(c.getColumnIndex("esearch")));
+                myArrList.add(c.getString(c.getColumnIndex("tentry")));
             }
         } finally {
             c.close();
