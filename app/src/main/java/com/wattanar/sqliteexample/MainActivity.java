@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -18,11 +20,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList employees;
     private EditText txtSearch;
     private ListView lView;
+    private Button clear_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         txtSearch = (EditText)findViewById(R.id.txtSearch);
         lView = (ListView)findViewById(R.id.lw);
+        clear_search = (Button)findViewById(R.id.clear_search);
+
+        clear_search.setOnClickListener(this);
 
         txtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -61,5 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == clear_search) {
+            txtSearch.setText("");
+        }
     }
 }

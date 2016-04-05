@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Offline Translator</string>
+    <string name="clear_search">Clear</string>
+    <string name="word_hint">type here</string>
 </resources>
