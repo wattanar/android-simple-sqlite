@@ -32,7 +32,7 @@ public class MyDB  extends SQLiteAssetHelper {
 
         try {
             while (c.moveToNext()) {
-                myArrList.add(c.getString(c.getColumnIndex("tentry")));
+                myArrList.add(c.getString(c.getColumnIndex("tentry")) + " (" + c.getString(c.getColumnIndex("ecat")) + ")");
             }
         } finally {
             c.close();
